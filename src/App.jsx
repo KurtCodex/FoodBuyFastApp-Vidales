@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/navbar';
 
 const ButtonComponent = () => {
 
-  return <button id='saludar'> Hello </button>
+  return <button className='btnOrder'> Encargar! </button>
 }
 
 function App() {
 
-  const producto = {precio: 100, cantidad: 10, peso: 30};
+  const producto = {nombre: "Tacos", precio: 1200, cantidad: 12, tiempo_entrega: 30};
 
   return (
     <div className="App" style={{fontSize: '20px', borderBotton:"1px solid red"}}>
       <Navbar/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello, your product has a cost of ${producto.precio}, its stock is {producto.cantidad} units, and it has {producto.peso} Kg for unit.
+          Hola estimado. 
+          <br /> Su producto: {producto.nombre}.
+          <br /> Tiene un precio de {producto.precio}.
+          <br /> La cantidad es: {producto.cantidad}. 
+          <br /> El tiempo de entrega estimado es: {producto.tiempo_entrega}
         </p>
         <ButtonComponent/>
       </header>
