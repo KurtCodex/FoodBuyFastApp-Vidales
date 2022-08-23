@@ -32,33 +32,8 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
-}
-
-
-.nav-wrapper
-{
-  background-color: rgba(254, 140, 19, 0.785);
-}
-.container-catalog li:hover
-{
-  background-color: rgba(255, 60, 0, 0.785);
-}
-
-p
-{
-  color:rgba(255, 213, 0, 0.785);
-}
-
-.btnOrder
-{
-  background-color: rgba(254, 140, 19, 0.785);
-  height: 2em;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.btnOrder:hover {
-  background-color: rgba(255, 60, 0, 0.785);
 }
