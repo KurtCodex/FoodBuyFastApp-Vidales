@@ -1,10 +1,22 @@
+.container-cards-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .cards-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
-    width: 90em;
+    width: 100%;
     height: 25em;
     margin: 1em;
 
@@ -15,7 +27,7 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
 
     background-color: #ffffff;
@@ -24,19 +36,49 @@
 
     border-radius: 5px;
     margin: 1em;
-    width: 20em;
-    height: 20em;
+    width: 18em;
+    height: 25em;
 
 }
 
 .card-img {
     padding: 10px;
-    width: 20em;
+    width: 18em;
     height: 15em;
+
+    max-width: auto;
+    max-height: 11em;
 }
 
 .card-title,
 .card-body p {
     margin: 5px;
     color: rgb(0, 0, 0);
+}
+
+
+.card-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card-button-buy,
+.card-button-addcart {
+
+    width: 6em;
+    height: 3em;
+    margin: 5px;
+
+    color: #FFF;
+    background-color: rgb(225, 107, 33);
+
+    border: none;
+    border-radius: 4px;
+}
+
+.card-button-buy:hover,
+.card-button-addcart:hover {
+    background-color: rgb(255, 132, 56);
 }
