@@ -18,6 +18,11 @@
     height: 3em;
 }
 
+.navbar-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 .navbar-btns button {
@@ -40,7 +45,19 @@
 
 .navbar-cart {
     color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
-    width: 2em;
-    height: 2em;
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.276);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.navbar-cart:hover {
+    padding: 7px;
+    background-color: rgb(255, 154, 66);
+    border: none;
+}
+
+.cart {
+    font-size: 25px;
 }
