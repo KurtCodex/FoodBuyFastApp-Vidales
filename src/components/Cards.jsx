@@ -1,7 +1,6 @@
 import { Card } from "../components/Card";
-import food1 from '../assets/imgFoods/imagefood1.jpg';
-import food2 from '../assets/imgFoods/imagefood2.jpg';
-import food3 from '../assets/imgFoods/imagefood3.jpg';
+import { food1, food2, food3 } from '../assets';
+
 
 import '../styles/Cards.css';
 
@@ -36,8 +35,8 @@ export const Cards = () => {
                 </div>
                 <div className="cards-container">
                     {
-                        cards.map(card => (
-                            <Card title={card.title} img={card.image} desc={card.description} />
+                        cards.map((card, idx) => ( // == (card)   key={card.id}
+                            <Card key={idx} title={card.title} img={card.image} desc={card.description} />
                         ))
                     }
                 </div>

@@ -1,7 +1,8 @@
-import '../styles/Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { CartWidget } from './CartWidget';
 import logo from '../assets/imgLogo/logo.png'
+import '../styles/Navbar.css'
 
 const Navbar = () => {
     return (
@@ -16,9 +17,7 @@ const Navbar = () => {
                 </div>
                 <button className="navbar-btn">Almuerzo</button>
                 <button className="navbar-btn">Cena</button>
-                <div className='navbar-cart'>
-                    <FontAwesomeIcon className='cart' icon={faCartShopping} />
-                </div>
+                <CartWidget />
             </div>
         </div>
     );
