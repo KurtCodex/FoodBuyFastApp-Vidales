@@ -2,6 +2,11 @@ import '../styles/Cards.css';
 import { ItemCount } from './ItemCount';
 
 export const Card = ({ title, img, desc }) => {
+
+    const onAdd = (counter) => {
+        console.log(counter)
+    };
+
     return (
         <div className='card-body'>
             <img className='card-img' src={img} alt="" />
@@ -9,8 +14,7 @@ export const Card = ({ title, img, desc }) => {
             <p>{desc}</p>
             <div className='card-buttons-container'>
                 <button onClick={function () { alert("Procesando compra..") }} className='card-button-buy'> Encargar!</button>
-                <ItemCount />
-                <button onClick={function () { alert("Agregado!") }} className='card-button-addcart'> Al carrito!</button>
+                <ItemCount onAdd={onAdd} initial={1} stock={12} />
             </div>
         </div>
     )

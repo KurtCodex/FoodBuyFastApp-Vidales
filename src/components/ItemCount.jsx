@@ -4,18 +4,19 @@ import { useState } from 'react';
 
 import '../styles/Cards.css'
 
-export const ItemCount = () => { // value puede ser un valor traido de otro jsx, utilizarlo e incrementarlo
+export const ItemCount = ({ stock, initial, onAdd }) => {
 
-    const [counter, setCounter] = useState(1);
+    const [counter, setCounter] = useState(initial);
 
-    const increment = () => { counter < 12 ? setCounter(counter + 1) : setCounter(counter) }
-    const decrement = () => { counter > 1 ? setCounter(counter - 1) : setCounter(counter) }
+    const increment = () => { counter < stock ? setCounter(counter + 1) : setCounter(counter) }
+    const decrement = () => { counter > initial ? setCounter(counter - 1) : setCounter(counter) }
 
     return (
         <>
             <button onClick={decrement} className='card-button-cant'> - </button>
             <h4 className='counter-value'> Cant: {counter} </h4>
             <button onClick={increment} className='card-button-cant'> + </button>
+            <button onClick={function () { alert("Agregado!"); onAdd(counter); }} className='card-button-addcart'> Al carrito!</button>
         </>
     )
 }
