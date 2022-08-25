@@ -1,5 +1,5 @@
 import '../styles/Cards.css';
-
+import { ItemCount } from './ItemCount';
 
 export const Card = ({ title, img, desc }) => {
     return (
@@ -8,8 +8,9 @@ export const Card = ({ title, img, desc }) => {
             <h3 className='card-title'> {title} </h3>
             <p>{desc}</p>
             <div className='card-buttons-container'>
-                <button className='card-button-buy'> Encargar!</button>
-                <button className='card-button-addcart'> Al Carrito!</button>
+                <button onClick={function () { alert("Procesando compra..") }} className='card-button-buy'> Encargar!</button>
+                <ItemCount />
+                <button onClick={function () { alert("Agregado!") }} className='card-button-addcart'> Al carrito!</button>
             </div>
         </div>
     )
