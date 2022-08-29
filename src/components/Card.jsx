@@ -1,8 +1,9 @@
 import '../styles/Cards.css';
 import { ItemCount } from './ItemCount';
 
-export const Card = ({ title, img, desc }) => {
 
+
+export const Card = ({ title, img, desc }) => { // ------------------     item
     const onAdd = (counter) => {
         console.log(counter)
     };

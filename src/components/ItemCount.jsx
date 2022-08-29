@@ -1,7 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-
-
 import '../styles/Cards.css'
 
 export const ItemCount = ({ stock, initial, onAdd }) => {
