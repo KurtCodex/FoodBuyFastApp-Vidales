@@ -1,10 +1,13 @@
-import React from 'react';
-import { ItemDetail } from './ItemDetail';
+import React, { useState, useEffect } from "react";
+
 import { Link } from 'react-router-dom';
+import { ItemDetail } from "./ItemDetail";
 import '../styles/itemDetailContainer.css';
 
 
-export const ItemDetailContainer = ({ price }) => {
+export const ItemDetailContainer = () => {
+
+
 
 
     return (
@@ -16,9 +19,9 @@ export const ItemDetailContainer = ({ price }) => {
                             X
                         </button>
                     </Link>
-                </div>
-                <ItemDetail price={price} />
 
+                </div>
+                <ItemDetail />
             </div>
 
         </>

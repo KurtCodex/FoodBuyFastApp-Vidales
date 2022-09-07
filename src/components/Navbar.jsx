@@ -1,14 +1,17 @@
-import React from 'react'
+import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { CartWidget } from './CartWidget';
 import { Link } from 'react-router-dom';
+
 import logobeer from '../assets/imgLogo/logo-beer.png';
 import '../styles/Navbar.css'
 
 
 
 export const Navbar = () => {
+
+
     return (
         <div className="navbar-container">
             <div className="navbar-title">
@@ -19,14 +22,14 @@ export const Navbar = () => {
                 <div className='navbar-btn-search'>
                     <FontAwesomeIcon className='btn-search' icon={faMagnifyingGlass} />
                 </div>
-                <button className="navbar-btn">Tienda</button>
+                <button className="navbar-btn" icon="">Categorias</button>
                 <button className="navbar-btn">Locales</button>
 
-                <button className="navbar-btn">
-                    <Link to="/Contacts">
+                <Link to="/Contacts">
+                    <button className="navbar-btn">
                         Contactos
-                    </Link>
-                </button>
+                    </button>
+                </Link>
                 <CartWidget />
             </div>
         </div>

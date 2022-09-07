@@ -1,22 +1,40 @@
-import React from "react";
-import '../styles/itemDetailContainer.css';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 
-export const ItemDetail = ({ price, idx }) => {
-    console.log(price)
+export const ItemDetail = () => {
+    const { id } = useParams();
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [beer, setBeers] = useState([]);
+
+
+    useEffect(() => {
+        setIsLoading(true)
+        fetch(`https://api.sampleapis.com/beers/ale/${id}`)
+            .then(response => response.json())
+            .then(beers => {
+                setBeers(beers)
+                setIsLoading(false);
+            });
+    }, [id])
+
+    useEffect(() => {
+        console.log(beer);
+    }, [beer])
+
     return (
         <>
-            <div className='ItemDetail-img'>
-                <img
-                    className='card-img'
-                    src=""
-                    alt="beer"
-                />
-            </div>
-            <div className='ItemDetail'> price: {price} </div>
-            {/* <div className='ItemDetail'> titulo: {title} </div>
-            <div className='ItemDetail'> precio: {price} </div>
-            <div className='ItemDetail'> reviews {reviews}</div> */}
+            {!isLoading && beer.rating !== null ? (
+                <>
+                    <img src={beer.image} alt="" />
+                    <h1> {beer.name} </h1>
+                    <h2> Precio por unidad: {beer.price} </h2>
+                    {/*<h2> Reseñas positivas: {beer.rating.reviews} </h2>
+                    <h2> Promedio de compra: {beer.rating.average.toFixed(2) * 10}% </h2>  */}
+                </>
+            ) : "Loading details"
+            }
         </>
     )
 }
