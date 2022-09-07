@@ -1,3 +1,11 @@
+.container-card-Detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .container-itemDetails {
 
     display: flex;
@@ -7,9 +15,9 @@
     background-color: #DE9151;
     color: rgb(0, 0, 0);
 
-    height: 30em;
+    height: 45em;
+    width: 30em;
 
-    margin-top: 5em;
 
     padding: 20px;
 }
@@ -28,10 +36,10 @@
     background-color: black;
     color: rgb(255, 107, 57);
     border-radius: 7px;
-    margin: 5px;
-
+    margin: 2em;
+    margin-top: 5em;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .exit-btn button:hover {
@@ -73,6 +81,11 @@
     background-color: beige;
     border: 2px solid rgba(0, 0, 0, 0.471);
     border-radius: 3px;
+}
+
+.img-detail {
+    width: 7em;
+    height: 10em;
 }
 
 a:link,

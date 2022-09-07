@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from "react";
-
 import { Link } from 'react-router-dom';
 import { ItemDetail } from "./ItemDetail";
 import '../styles/itemDetailContainer.css';
@@ -7,23 +5,20 @@ import '../styles/itemDetailContainer.css';
 
 export const ItemDetailContainer = () => {
 
-
-
-
     return (
         <>
-            <div className='container-itemDetails'>
+            <div className='container-card-Detail'>
                 <div className='exit-btn'>
                     <Link to="/">
                         <button >
-                            X
+                            Volver
                         </button>
                     </Link>
-
                 </div>
-                <ItemDetail />
+                <div className='container-itemDetails'>
+                    <ItemDetail />
+                </div>
             </div>
-
         </>
     )
 }
