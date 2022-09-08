@@ -1,3 +1,17 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #43434385;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e0cfae85;
+}
+
+
 .container-categories {
     display: flex;
     flex-direction: column;
@@ -41,6 +55,6 @@
     width: 80em;
     height: 45em;
     overflow-y: scroll;
-    scrollbar-color: black red;
+
     margin-bottom: 10em;
 }
