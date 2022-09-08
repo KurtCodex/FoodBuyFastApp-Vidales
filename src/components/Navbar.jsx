@@ -10,8 +10,6 @@ import '../styles/Navbar.css'
 
 
 export const Navbar = () => {
-
-
     return (
         <div className="navbar-container">
             <div className="navbar-title">
@@ -22,12 +20,12 @@ export const Navbar = () => {
                 <div className='navbar-btn-search'>
                     <FontAwesomeIcon className='btn-search' icon={faMagnifyingGlass} />
                 </div>
-                <Link to="/Categories">
-                    <button className="navbar-btn" icon="">Categorias</button>
+                <Link to="/Categories/ale">
+                    <button className="navbar-btn" icon="">Cervezas ALE</button>
                 </Link>
-
-                <button className="navbar-btn">Locales</button>
-
+                <Link to="/Categories/stouts">
+                    <button className="navbar-btn" icon="">Cervezas STOUT</button>
+                </Link>
                 <Link to="/Contacts">
                     <button className="navbar-btn">
                         Contactos

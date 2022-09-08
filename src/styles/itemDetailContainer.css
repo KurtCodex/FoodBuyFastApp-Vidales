@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 5em;
 }
 
 .container-itemDetails {
@@ -28,18 +29,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-
-    width: 100%;
-
+    width: 10%;
 }
 
 .exit-btn button {
     background-color: black;
     color: rgb(255, 107, 57);
     border-radius: 7px;
-    margin: 2em;
-    margin-top: 5em;
     font-weight: bold;
+    margin: 10px;
     font-size: 20px;
 }
 

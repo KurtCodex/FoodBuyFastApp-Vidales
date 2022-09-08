@@ -13,7 +13,8 @@ export const AppRouter = () => {
             <Route path="/" element={<ItemListContainer />}></Route>
             <Route path="/ItemDetailContainer/:id" element={<ItemDetailContainer />}></Route>
             <Route path="/Contacts" element={<Contacts />}></Route>
-            <Route path="/Categories" element={<Categories />}></Route>
+            <Route path="/Categories/:id" element={<Categories />}></Route>
+            <Route path="/Categories/:id" element={<Categories />}></Route>
         </Routes>
     )
 }

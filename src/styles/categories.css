@@ -8,14 +8,27 @@
 }
 
 .title-container-list {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+
+
+    background-color: #000;
+    color: #E0CFAE;
+
+    width: 100%;
+    margin-top: 4em;
+}
+
+.title-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: #E0CFAE;
-    width: 100%;
-    margin-top: 5em;
 }
+
+
 
 .cards-container-list {
     display: grid;

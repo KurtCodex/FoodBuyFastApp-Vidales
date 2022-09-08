@@ -12,7 +12,7 @@ export const Item = ({ title, img, idx, price, reviews }) => { // --------------
                     src={img}
                     onError={({ currentTarget }) => {
                         currentTarget.onerror = null; // prevents looping
-                        currentTarget.src = "https://api.lorem.space/image/drink?w=200&h=200";
+                        currentTarget.src = "https://api.lorem.space/image/drink?w=240&h=240";
                     }}
                     alt="beer"
                 />

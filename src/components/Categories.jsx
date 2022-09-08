@@ -1,36 +1,42 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { Item } from "./Item";
+import { useParams } from "react-router-dom";
 import '../styles/categories.css'
 
 export const Categories = () => {
-
+    const { id } = useParams();
     const [isLoading, setIsLoading] = useState(false);
     const [beer, setBeers] = useState([]);
 
     useEffect(() => {
         setIsLoading(true)
-        fetch("https://api.sampleapis.com/beers/ale")
+        fetch(`https://api.sampleapis.com/beers/${id}`)
             .then(response => response.json())
             .then(beers => {
                 setBeers(beers.slice(60, 100))
                 setIsLoading(false);
             });
-    }, [])
+    }, [id])
 
-    useEffect(() => {
-        console.log(beer);
-    }, [beer])
 
     return (
         <>
             <div className="title-container-list">
-                <h1> Conoce todas nuestras cervezas! </h1>
+                <div className='exit-btn'>
+                    <Link to="/">
+                        <button >
+                            Inicio
+                        </button>
+                    </Link>
+                </div>
+                <div className="title-list">
+                    <h1> Conoce todas nuestras cervezas! </h1>
+                </div>
             </div>
+
             <div className="container-categories">
-
                 <div className="container-cards-title">
-
                     <div className="cards-container-list">
                         {
                             !isLoading ?
@@ -43,7 +49,6 @@ export const Categories = () => {
                                             idx={e.id}
                                             price={e.price}
                                             reviews={e.rating.reviews}
-
                                         />
                                     </Link>
                                 )

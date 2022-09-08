@@ -21,9 +21,6 @@ export const ItemDetailContainer = () => {
             });
     }, [id])
 
-    useEffect(() => {
-        console.log(beer);
-    }, [beer])
     return (
         <>
             <div className='container-card-Detail'>
