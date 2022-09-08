@@ -1,0 +1,34 @@
+.container-categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.title-container-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #E0CFAE;
+    width: 100%;
+    margin-top: 5em;
+}
+
+.cards-container-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+
+    background-color: rgb(0, 0, 0);
+    border: 5px solid #E0CFAE;
+    border-radius: 10px;
+
+    width: 70em;
+    height: 45em;
+    overflow-y: scroll;
+
+    margin-bottom: 10em;
+}

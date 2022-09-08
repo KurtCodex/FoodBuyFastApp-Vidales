@@ -20,10 +20,9 @@
     align-items: center;
     justify-content: center;
 
-    height: 25em;
+    height: 30em;
     margin: 1em;
     margin-top: 3em;
-
 }
 
 .card-body {
@@ -99,8 +98,8 @@
     height: 4em;
     margin: 5px;
 
-    color: rgb(0, 0, 0);
-    background-color: #ffffff;
+    background-color: #525252;
+    color: #E0CFAE;
 
     border: none;
     border-radius: 4px;
@@ -112,14 +111,14 @@
 }
 
 .card-button-addcart:hover {
-    background-color: #525252;
-    color: #FFF;
+    background-color: #707070;
+    color: #E0CFAE;
 
 }
 
 .counter-value {
-    font-size: 14px;
-    color: #000;
+    font-size: 15px;
+    color: #E0CFAE;
 }
 
 .card-button-cant {
@@ -129,7 +128,9 @@
     font-size: 15px;
     font-weight: bold;
 
-    background-color: #ffffff;
+    background-color: #525252;
+    color: #E0CFAE;
+
     border: none;
     border-radius: 4px;
 
@@ -137,8 +138,8 @@
 }
 
 .card-button-cant:hover {
-    background-color: #525252;
-    color: #FFF;
+    background-color: #707070;
+    color: #E0CFAE;
 }
 
 .card-button-AddCart-Cant {

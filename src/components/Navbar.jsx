@@ -22,7 +22,10 @@ export const Navbar = () => {
                 <div className='navbar-btn-search'>
                     <FontAwesomeIcon className='btn-search' icon={faMagnifyingGlass} />
                 </div>
-                <button className="navbar-btn" icon="">Categorias</button>
+                <Link to="/Categories">
+                    <button className="navbar-btn" icon="">Categorias</button>
+                </Link>
+
                 <button className="navbar-btn">Locales</button>
 
                 <Link to="/Contacts">

@@ -1,7 +1,7 @@
 import '../styles/Cards.css';
 
 
-export const Card = ({ title, img, idx, price, reviews }) => { // ------------------     item
+export const Item = ({ title, img, idx, price, reviews }) => { // ------------------     item
 
 
     return (

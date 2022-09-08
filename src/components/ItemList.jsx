@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "../components/Card";
+import { Item } from "./Item";
 import { Link } from 'react-router-dom';
 import '../styles/Cards.css';
-export const Cards = () => { // --------------------------itemList
+export const ItemList = () => { // --------------------------itemList
 
     const [isLoading, setIsLoading] = useState(false);
     const [beer, setBeers] = useState([]);
-
 
     useEffect(() => {
         setIsLoading(true)
         fetch("https://api.sampleapis.com/beers/ale")
             .then(response => response.json())
             .then(beers => {
-                setBeers(beers.slice(10, 13))
+                setBeers(beers.slice(69, 72))
                 setIsLoading(false);
             });
     }, [])
@@ -33,7 +32,7 @@ export const Cards = () => { // --------------------------itemList
                         !isLoading ?
                             beer.map((e, idx) => (
                                 <Link to={`/ItemDetailContainer/${e.id}`}>
-                                    <Card
+                                    <Item
                                         key={idx}
                                         img={e.image}
                                         title={e.name}
