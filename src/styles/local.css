@@ -1,0 +1,45 @@
+.container-local-drink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container-contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000;
+    color: #E0CFAE;
+
+    width: 100%;
+    height: 10em;
+    margin-top: 1em;
+}
+
+.cards-container-lists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.card-Itemlocal {
+    background-color: #000;
+    color: #E0CFAE;
+    padding: 1.5em;
+    margin: 1em;
+
+    border-radius: 10px;
+}
+
+.card-Itemlocal:hover {
+    background-color: rgb(29, 29, 29);
+}
+
+.img-localbeer {
+    width: 30em;
+    height: auto;
+}

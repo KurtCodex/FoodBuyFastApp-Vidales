@@ -38,11 +38,12 @@
 }
 
 .navbar-btns button {
-    background-color: #DE9151;
-    color: white;
+    background-color: #000000;
+    color: #E0CFAE;
+    border: 1px solid #E0CFAE;
+
     letter-spacing: 1.5px;
     font-size: 14px;
-    border: none;
     border-radius: 3px;
     cursor: pointer;
 
@@ -52,12 +53,12 @@
 }
 
 .navbar-btns button:hover {
-    background-color: #ffa65d;
+    background-color: #343434;
 }
 
 .input-search {
     outline: none;
-    border: 2px solid #DE9151;
+    border: 2px solid #E0CFAE;
     letter-spacing: 1.5px;
     font-size: 14px;
 
@@ -75,8 +76,8 @@
     align-items: center;
     justify-content: center;
 
-    color: rgb(255, 255, 255);
-    background-color: #DE9151;
+    color: #000;
+    background-color: #E0CFAE;
     border-radius: 3px;
 
     margin-right: 20px;
@@ -92,7 +93,8 @@
 }
 
 .navbar-btn-search:hover {
-    background-color: #ffa65d;
+    background-color: #343434;
+    color: #E0CFAE;
 }
 
 .navbar-cart {
@@ -100,7 +102,7 @@
     align-items: center;
     justify-content: center;
 
-    border: 2px solid #de915171;
+    border: 2px solid #E0CFAE;
     color: rgb(255, 255, 255);
     border-radius: 3px;
 
@@ -113,7 +115,8 @@
 }
 
 .navbar-cart:hover {
-    background-color: #ffa65d;
+    color: #000;
+    background-color: #E0CFAE;
     border: 2px solid transparent;
 }
 

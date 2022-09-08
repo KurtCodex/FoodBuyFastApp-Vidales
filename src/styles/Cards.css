@@ -15,12 +15,11 @@
 
 
 .cards-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    height: 30em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    justify-items: center;
+    height: 20em;
     margin: 1em;
     margin-top: 3em;
 }
@@ -40,7 +39,7 @@
     padding: 1em;
 
     width: 18em;
-    height: 25em;
+    height: 20em;
 
 }
 

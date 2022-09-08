@@ -12,9 +12,11 @@ import '../styles/Navbar.css'
 export const Navbar = () => {
     return (
         <div className="navbar-container">
-            <div className="navbar-title">
-                <img className='title-img-logo' src={logobeer} alt="FastBuyFoods" />
-            </div>
+            <Link to="/">
+                <div className="navbar-title">
+                    <img className='title-img-logo' src={logobeer} alt="FastBuyFoods" />
+                </div>
+            </Link>
             <div className="navbar-btns">
                 <input className='input-search' type="text" name="" id="input-search" placeholder='Que "pinta" hoy ?' />
                 <div className='navbar-btn-search'>
@@ -26,9 +28,9 @@ export const Navbar = () => {
                 <Link to="/Categories/stouts">
                     <button className="navbar-btn" icon="">Cervezas STOUT</button>
                 </Link>
-                <Link to="/Contacts">
+                <Link to="/Local">
                     <button className="navbar-btn">
-                        Contactos
+                        Visitanos!
                     </button>
                 </Link>
                 <CartWidget />

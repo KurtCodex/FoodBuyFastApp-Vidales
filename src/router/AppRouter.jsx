@@ -3,8 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { ItemListContainer } from '../components/ItemListContainer';
 import { ItemDetailContainer } from '../components/ItemDetailContainer';
 import { Categories } from '../components/Categories';
-//views
-const Contacts = () => { }
+import { Local } from '../components/Local';
 
 
 export const AppRouter = () => {
@@ -12,7 +11,7 @@ export const AppRouter = () => {
         <Routes>
             <Route path="/" element={<ItemListContainer />}></Route>
             <Route path="/ItemDetailContainer/:id" element={<ItemDetailContainer />}></Route>
-            <Route path="/Contacts" element={<Contacts />}></Route>
+            <Route path="/Local" element={<Local />}></Route>
             <Route path="/Categories/:id" element={<Categories />}></Route>
             <Route path="/Categories/:id" element={<Categories />}></Route>
         </Routes>

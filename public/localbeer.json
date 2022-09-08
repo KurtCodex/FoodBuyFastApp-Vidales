@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Blonde",
+        "img": "https://api.twinpeaksrestaurant.com/wp-content/uploads/Light-Beer-on-wood_cropped.jpg",
+        "price": "15.99",
+        "ibu": "10 - Muy bajo"
+    },
+    {
+        "id": 2,
+        "name": "Amber Lager",
+        "img": "https://api.twinpeaksrestaurant.com/wp-content/uploads/brew-dirty-blonde-cropped.jpg",
+        "price": "12.99",
+        "ibu": "15 - Intermedio"
+    },
+    {
+        "id": 3,
+        "name": "Porter",
+        "img": "https://api.twinpeaksrestaurant.com/wp-content/uploads/brew-knotty-brunette-cropped.jpg",
+        "price": "17.99",
+        "ibu": "25 - Alto"
+    },
+    {
+        "id": 4,
+        "name": "Red-Ale",
+        "img": "https://api.twinpeaksrestaurant.com/wp-content/uploads/brew-dropdead-redhead-cropped.jpg",
+        "price": "14.99",
+        "ibu": "18 - Intermedio"
+    },
+    {
+        "id": 5,
+        "name": "Honey-cream",
+        "img": "https://api.twinpeaksrestaurant.com/wp-content/uploads/Beer-Line-up-1130-x-714.jpg",
+        "price": "10.99",
+        "ibu": "12 - Bajo"
+    }
+]

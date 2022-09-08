@@ -29,7 +29,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 10%;
+    width: 100%;
 }
 
 .exit-btn button {
