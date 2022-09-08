@@ -12,7 +12,7 @@ export const ItemList = () => { // --------------------------itemList
         fetch("https://api.sampleapis.com/beers/ale")
             .then(response => response.json())
             .then(beers => {
-                setBeers(beers.slice(69, 80))
+                setBeers(beers.slice(70, 100))
                 setIsLoading(false);
             });
     }, [])
