@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import '../styles/Cards.css'
 
-export const ItemCount = ({ stock, initial }) => {
+export const ItemCount = ({ stock, initial, average }) => {
     const [counter, setCounter] = useState(initial);
 
     const increment = () => { counter < stock ? setCounter(counter + 1) : setCounter(counter) }
