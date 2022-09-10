@@ -15,12 +15,11 @@ export const ItemDetailContainer = () => {
             .then((data) => {
                 console.log(id)
                 console.log(data)
-                setBeers(data.filter(e => e.id === id))
+                setBeers(data.find(e => e.id === parseInt(id)))
                 setIsLoading(false);
             });
     }, [id]);
 
-    console.log(beers);
     return (
         <>
             <div className="container-card-Detail">
@@ -35,8 +34,8 @@ export const ItemDetailContainer = () => {
                             image={beers.image}
                             price={beers.price}
                             name={beers.name}
-                        // reviews={beers.rating.reviews}
-                        // average={beers.rating.average}
+                            reviews={beers.rating.reviews}
+                            average={beers.rating.average}
                         />
                     </div>
                 ) : (
