@@ -9,7 +9,6 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        // YA ESTA
         fetch(
             "https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByPopular.json"
         )

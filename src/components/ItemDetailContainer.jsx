@@ -6,20 +6,21 @@ import { ItemDetail } from "./ItemDetail";
 export const ItemDetailContainer = () => {
     const { id } = useParams();
     const [isLoading, setIsLoading] = useState(true);
-    const [beer, setBeers] = useState([]);
+    const [beers, setBeers] = useState([]);
 
     useEffect(() => {
         setIsLoading(true);
-        fetch(
-            `https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/apibeer.json`
-        )
+        fetch("https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByPopular.json")
             .then((response) => response.json())
-            .then((beers) => {
-                setBeers(beers.filter(id));
+            .then((data) => {
+                console.log(id)
+                console.log(data)
+                setBeers(data.filter(e => e.id === id))
                 setIsLoading(false);
             });
     }, [id]);
 
+    console.log(beers);
     return (
         <>
             <div className="container-card-Detail">
@@ -28,14 +29,14 @@ export const ItemDetailContainer = () => {
                         <button>Volver</button>
                     </Link>
                 </div>
-                {!isLoading && beer.rating !== null ? (
+                {!isLoading && beers.rating !== null ? (
                     <div className="container-itemDetails">
                         <ItemDetail
-                            image={beer.image}
-                            price={beer.price}
-                            name={beer.name}
-                            reviews={beer.rating.reviews}
-                            average={beer.rating.average}
+                            image={beers.image}
+                            price={beers.price}
+                            name={beers.name}
+                        // reviews={beers.rating.reviews}
+                        // average={beers.rating.average}
                         />
                     </div>
                 ) : (
