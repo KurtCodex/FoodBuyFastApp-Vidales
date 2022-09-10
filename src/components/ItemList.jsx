@@ -19,9 +19,6 @@ export const ItemList = ({ beer }) => {
                                     key={idx}
                                     img={e.image}
                                     title={e.name}
-                                    idx={e.id}
-                                    price={e.price}
-                                    reviews={e.rating.reviews}
                                 />
                             </Link>
                         ))

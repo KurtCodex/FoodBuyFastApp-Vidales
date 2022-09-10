@@ -13,10 +13,10 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch(`https://api.sampleapis.com/beers/ale/${id}`)
+        fetch(`./apibeer.json`)
             .then(response => response.json())
             .then(beers => {
-                setBeers(beers)
+                setBeers(beers.filter(id))
                 setIsLoading(false);
             });
     }, [id])

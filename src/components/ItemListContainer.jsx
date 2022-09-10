@@ -10,17 +10,13 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch("https://api.sampleapis.com/beers/ale")
+        fetch("./apibeer.json")
             .then(response => response.json())
             .then(beers => {
-                setBeers(beers.slice(70, 100))
+                setBeers(beers)
                 setIsLoading(false);
             });
     }, [])
-
-    useEffect(() => {
-        console.log(beer);
-    }, [beer])
 
     return (
         <>
