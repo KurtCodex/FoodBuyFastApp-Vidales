@@ -1,35 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { ItemList } from './ItemList'
-import { Location } from '../components/Location';
-import '../styles/Location.css'
+import React, { useEffect, useState } from "react";
+import { Location } from "../components/Location";
+import "../styles/Location.css";
+import { ItemList } from "./ItemList";
 
 export const ItemListContainer = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [beers, setBeers] = useState([]);
 
-    const [isLoading, setIsLoading] = useState(false);
-    const [beer, setBeers] = useState([]);
-
-    useEffect(() => {
-        setIsLoading(true)
-        fetch("./apibeer.json")
-            .then(response => response.json())
-            .then(beers => {
-                setBeers(beers)
-                setIsLoading(false);
-            });
-    }, [])
-
-    return (
-        <>
-            <Location />
-            {
-                !isLoading ?
-                    <ItemList beer={beer} />
-                    : (
-                        <div className="isLoading">
-                            Loading...Many Request<br />
-                            Wait five minutes please.
-                        </div>)
-            }
-        </>
+  useEffect(() => {
+    setIsLoading(true);
+    // YA ESTA
+    fetch(
+      "https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByPopular.json"
     )
-}
+      .then((response) => response.json())
+      .then((data) => {
+        setBeers(data);
+        setIsLoading(false);
+      });
+  }, []);
+
+  return (
+    <>
+      <Location />
+      {!isLoading ? (
+        <ItemList beers={beers} />
+      ) : (
+        <div className="isLoading">
+          Loading...Many Request
+          <br />
+          Wait five minutes please.
+        </div>
+      )}
+    </>
+  );
+};
