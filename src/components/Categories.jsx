@@ -25,9 +25,6 @@ export const Categories = () => {
     <>
       <div className="title-container-list">
         <div className="exit-btn">
-          <Link to="/">
-            <button>Inicio</button>
-          </Link>
         </div>
         <div className="title-list">
           <h1> Conoce todas nuestras cervezas! </h1>

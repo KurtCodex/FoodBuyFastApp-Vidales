@@ -55,6 +55,6 @@
     width: 80em;
     height: 45em;
     overflow-y: scroll;
-
+    text-align: center;
     margin-bottom: 10em;
 }
