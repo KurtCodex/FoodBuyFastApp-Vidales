@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from './components/Navbar';
+import { CartContext } from "./context/CartContext";
 import { AppRouter } from "./router/AppRouter";
 
 import './styles/App.css';
@@ -9,8 +10,10 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <AppRouter />
+      <CartContext>
+        <Navbar />
+        <AppRouter />
+      </CartContext>
     </>
   )
 }

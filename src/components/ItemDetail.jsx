@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import '../styles/Cards.css'
 import { ItemCount } from "./ItemCount";
+import { CContext } from "../context/CartContext";
 
+export const ItemDetail = ({ image, name, price, reviews, average, item }) => {
+    const [cantCart, setCantCart] = useState(1)
+    const { addItem } = useContext(CContext);
 
-export const ItemDetail = ({ image, name, price, reviews, average, onAdd }) => {
-    const [cantCart, setCantCart] = useState(0)
+    const onAdd = () => {
+        addItem(item, cantCart)
+    }
 
     return (
         <>
@@ -16,9 +21,10 @@ export const ItemDetail = ({ image, name, price, reviews, average, onAdd }) => {
             <br />
 
             <ItemCount stock={6} initial={1} setCantCart={setCantCart} cantCart={cantCart} />
-            <h3>
-                cantidad a comprar: {cantCart}
-            </h3>
+
+            <div className='container-button-addcart'>
+                <button onClick={() => { onAdd() }} className='card-button-addcart'> Al carrito!</button>
+            </div>
         </>
     )
 }
