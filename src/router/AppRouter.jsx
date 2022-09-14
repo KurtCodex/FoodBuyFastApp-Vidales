@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { ItemListContainer } from '../components/ItemListContainer';
 import { ItemDetailContainer } from '../components/ItemDetailContainer';
 import { Categories } from '../components/Categories';
+import { Cart } from '../components/Cart';
 import { Local } from '../components/Local';
 
 
@@ -14,6 +15,7 @@ export const AppRouter = () => {
             <Route path="/Local" element={<Local />}></Route>
             <Route path="/Categories/:id" element={<Categories />}></Route>
             <Route path="/Categories/:id" element={<Categories />}></Route>
+            <Route path="/Cart" element={<Cart />}></Route>
         </Routes>
     )
 }

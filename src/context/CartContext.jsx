@@ -20,14 +20,16 @@ export const CartContext = ({ children }) => {
     const isInCart = (item) => {
         return itemsCart.find((e) => e.item === item);
     }
-    const removeItem = () => {
+    // const removeItem = (itemId) => {
+    //     setItemCart(itemsCart.filter(e => e.item.id !== itemId))
+    // }
 
-    }
-
-    const clearAll = () => {
-        setItemCart([]);
-    }
+    // const clearAll = () => {
+    //     setItemCart([]);
+    // }
     return (
-        <CContext.Provider value={{ itemsCart, addItem }}> {children} </CContext.Provider>
+        <>
+            <CContext.Provider value={{ itemsCart, addItem }}> {children} </CContext.Provider>
+        </>
     )
 }

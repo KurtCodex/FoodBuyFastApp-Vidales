@@ -36,7 +36,10 @@ export const Navbar = () => {
                         Visitanos!
                     </button>
                 </Link>
-                <CartWidget />
+                <Link to="/Cart">
+                    <CartWidget />
+                </Link>
+
             </div>
         </div>
     )

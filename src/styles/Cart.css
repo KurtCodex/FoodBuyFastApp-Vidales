@@ -1,0 +1,30 @@
+.container-cart {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    margin-top: 5em;
+
+}
+
+.container-cart-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    background-color: aliceblue;
+    color: rgb(0, 0, 0);
+    margin: 1em;
+
+    width: 80%;
+    height: 30em;
+
+}
+
+.itemscart {
+    width: 15em;
+}
