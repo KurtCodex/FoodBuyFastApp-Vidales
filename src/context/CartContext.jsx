@@ -25,7 +25,7 @@ export const CartContext = ({ children }) => {
     }
 
     const clearAll = () => {
-
+        setItemCart([]);
     }
     return (
         <CContext.Provider value={{ itemsCart, addItem }}> {children} </CContext.Provider>
