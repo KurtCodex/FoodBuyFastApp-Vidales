@@ -12,7 +12,11 @@ export const Cart = () => {
         <>
             <div className='container-cart'>
                 <div className='container-cart-items'>
-                    <p className='itemscart'> {JSON.stringify(itemsCart)}  </p>
+                    <p className='itemscart'> 
+                    {
+                        itemsCart.map((e) => e.itemsCart)
+                    }  
+                    </p>
 
                 </div>
             </div>
