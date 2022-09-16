@@ -31,7 +31,7 @@ export const ItemDetailContainer = () => {
                 {!isLoading && beers.rating !== null ? (
                     <div className="container-itemDetails">
                         <ItemDetail
-                            item={{ beers }}
+                            item={beers}
                             image={beers.image}
                             price={beers.price}
                             name={beers.name}
