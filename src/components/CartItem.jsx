@@ -5,7 +5,7 @@ export const CartItem = ({ item }) => {
         <>
 
             <div className='container-item'>
-                {item.name}
+                {item.name} - {item.price}
 
                 <div className='container-quantity'></div>
                 <button className='btn-exit-cart'> X </button>
