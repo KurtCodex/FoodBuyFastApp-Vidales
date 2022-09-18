@@ -3,7 +3,7 @@ import "../styles/Cart.css"
 import { CContext } from "../context/CartContext";
 import { useContext } from 'react';
 import { CartItem } from './CartItem';
-
+import { Link } from 'react-router-dom';
 export const Cart = () => {
     const { itemsCart, removeItem, clearAll, Total } = useContext(CContext);
     const total = Total();
@@ -32,13 +32,18 @@ export const Cart = () => {
                             </button>
                         </div>
                         <div className='container-price-tot'>
-                            <h1>Total de la compra es: {total}</h1>
+                            <h1>Total de la compra es: $ {total}</h1>
                         </div>
 
                     </div>
                 ) : (
                     <div className='container-void'>
                         <h1>Aun no has agregado nada! Agrega alguna cerveza </h1>
+                        <div className="exit-btn">
+                            <Link to="/">
+                                <button>Volver</button>
+                            </Link>
+                        </div>
                     </div>
                 )
             }

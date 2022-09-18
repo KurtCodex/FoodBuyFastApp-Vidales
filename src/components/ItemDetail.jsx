@@ -23,7 +23,7 @@ export const ItemDetail = ({ image, name, price, reviews, average, item }) => {
             <ItemCount stock={6} initial={1} setCantCart={setCantCart} cantCart={cantCart} />
 
             <div className='container-button-addcart'>
-                <button onClick={() => { onAdd() }} className='card-button-addcart'> Al carrito!</button>
+                <button onClick={() => { onAdd() }} className='card-button-addcart'> Añadir al carrito!</button>
             </div>
         </>
     )
