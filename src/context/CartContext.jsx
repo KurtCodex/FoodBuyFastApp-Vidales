@@ -18,7 +18,7 @@ export const CartContext = ({ children }) => {
         console.log(itemsCart)
     }
     const isInCart = (item) => {
-        return itemsCart.find((e) => e.item === item);
+        return itemsCart.find((e) => e.item.id === item.id);
     }
     const removeItem = (itemId) => {
         setItemCart(itemsCart.filter(e => e.item.id !== itemId))
