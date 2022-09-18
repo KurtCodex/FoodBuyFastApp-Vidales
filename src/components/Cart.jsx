@@ -6,7 +6,6 @@ import { CartItem } from './CartItem';
 
 export const Cart = () => {
     const { itemsCart, removeItem, clearAll, Total } = useContext(CContext);
-    console.log(itemsCart.length);
     const total = Total();
 
     return (
