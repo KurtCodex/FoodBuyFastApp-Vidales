@@ -30,7 +30,7 @@ export const CartContext = ({ children }) => {
 
     const Total = () => {
 
-        return itemsCart.reduce((valorAnt, valorAct) => valorAnt + parseFloat((valorAct.item.price * valorAct.quantity)), 0);
+        return itemsCart.reduce((valorAnt, valorAct) => valorAnt + (parseFloat((valorAct.item.price * valorAct.quantity)).toFixed(2) * 1), 0);
     }
 
 

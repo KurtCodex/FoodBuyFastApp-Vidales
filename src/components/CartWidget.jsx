@@ -8,11 +8,14 @@ import { useContext } from 'react';
 
 export const CartWidget = () => {
     const { itemsCart } = useContext(CContext);
+    let num = itemsCart.length
     return (
         <>
             {
                 itemsCart.length !== 0 ? (<div className='navbar-cart'>
                     <FontAwesomeIcon className='cart' icon={faCartShopping} />
+                    <p>{num}</p>
+
                 </div>) : (<></>)
 
             }
