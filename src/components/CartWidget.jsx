@@ -14,7 +14,10 @@ export const CartWidget = () => {
             {
                 itemsCart.length !== 0 ? (<div className='navbar-cart'>
                     <FontAwesomeIcon className='cart' icon={faCartShopping} />
-                    <p>{num}</p>
+                    <div className='container-circle-num-cant'>
+                        <p className='circle-num-cant'>{num}</p>
+                    </div>
+
 
                 </div>) : (<></>)
 
