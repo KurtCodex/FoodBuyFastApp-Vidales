@@ -92,3 +92,26 @@ a:visited,
 a:active {
     text-decoration: none;
 }
+
+@media only screen and (max-width : 420px) {
+    .container-card-Detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 420px;
+        margin-top: 5em;
+    }
+
+    .container-itemDetails {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000000;
+        color: #E0CFAE;
+        border: 5px solid #E0CFAE;
+        height: 45em;
+        width: 20em;
+        padding: 20px;
+    }
+}
