@@ -215,14 +215,7 @@
 
     }
 
-    .input-location {
-        padding-left: 10px;
-        border: none;
-        background-color: rgb(255, 246, 242);
-        outline: none;
-        font-size: 25px;
-        width: 30vh;
-    }
+
 
     .input-search {
         display: none;

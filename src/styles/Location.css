@@ -60,3 +60,18 @@
 
     font-size: 20px;
 }
+
+
+
+
+@media only screen and (max-width : 420px) {
+    .input-location {
+        padding-left: 10px;
+        border: none;
+        background-color: rgb(255, 246, 242);
+        outline: none;
+        font-size: 25px;
+        width: 30vh;
+    }
+
+}
