@@ -212,26 +212,22 @@
 
     .navbar-btn-search {
         display: none;
-        align-items: center;
-        justify-content: center;
-        color: #000;
-        background-color: #E0CFAE;
-        border-radius: 3px;
-        width: 2em;
-        height: 2em;
-        cursor: pointer;
+
+    }
+
+    .input-location {
+        padding-left: 10px;
+        border: none;
+        background-color: rgb(255, 246, 242);
+        outline: none;
+        font-size: 25px;
+        width: 30vh;
     }
 
     .input-search {
         display: none;
         outline: none;
-        border: 2px solid #E0CFAE;
-        letter-spacing: 1.5px;
-        font-size: 5px;
-        background-color: rgb(255, 253, 252);
-        width: 5em;
-        height: 2em;
-        border-radius: 3px;
+
     }
 
     .navbar-btns button {
