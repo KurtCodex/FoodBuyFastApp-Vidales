@@ -114,4 +114,61 @@
 .container-void h1 {
     margin-top: 5em;
     color: #E0CFAE;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 420px) {
+
+    .container-cart {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 7em;
+    }
+
+    .container-cart-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+        color: rgb(0, 0, 0);
+        margin: 1em;
+        width: 90%;
+        height: 55vh;
+        overflow: scroll;
+    }
+
+    .container-clean-Cart {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 1em;
+        width: 70%;
+    }
+
+    .container-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 5em;
+        width: 85%;
+        margin: 0;
+        padding: 1em;
+        border-radius: 10px;
+        border: 2px solid #E0CFAE;
+        background-color: #000000;
+        color: #E0CFAE;
+    }
 }
