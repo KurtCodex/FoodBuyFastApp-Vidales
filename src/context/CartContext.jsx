@@ -15,7 +15,6 @@ export const CartContext = ({ children }) => {
         }
 
         setItemCart([...itemsCart, { item, quantity }])
-        console.log(itemsCart)
     }
     const isInCart = (item) => {
         return itemsCart.find((e) => e.item.id === item.id);

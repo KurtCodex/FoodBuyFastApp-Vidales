@@ -13,8 +13,6 @@ export const ItemDetailContainer = () => {
         fetch("https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByPopular.json")
             .then((response) => response.json())
             .then((data) => {
-                console.log(id)
-                console.log(data)
                 setBeers(data.find(e => e.id === parseInt(id)))
                 setIsLoading(false);
             });
