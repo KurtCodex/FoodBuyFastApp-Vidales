@@ -18,6 +18,9 @@ export const ItemDetailContainer = () => {
             });
     }, [id]);
 
+
+
+
     return (
         <>
             <div className="container-card-Detail">

@@ -3,10 +3,30 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyC2LCL9IF9QrPBfrbM5tgMp7rBucvZSb04",
+  authDomain: "valhalla-beers.firebaseapp.com",
+  projectId: "valhalla-beers",
+  storageBucket: "valhalla-beers.appspot.com",
+  messagingSenderId: "336053367164",
+  appId: "1:336053367164:web:528b1b8075e019987434f9"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
