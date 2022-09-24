@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Location } from "../components/Location";
 import "../styles/Location.css";
 import { ItemList } from "./ItemList";
-import { getFirestore, doc, getdoc, getDoc } from 'firebase/firestore';
+import { getFirestore, getDoc, collection } from 'firebase/firestore';
 
 export const ItemListContainer = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -20,27 +20,14 @@ export const ItemListContainer = () => {
     //         });
     // }, []);
 
-
-
-    const [product, setProduct] = useState([])
-
     useEffect(() => {
 
-        const db = getFirestore();
-        const itemRef = doc(db, 'popular');
-        getDoc(itemRef).then((snapshot) => {
-
-            const newProduct = {
-                id: snapshot.id,
-                ...snapshot.data(),
-            };
-
-            setProduct(newProduct)
-
-            console.log(snapshot.id);
-            console.log(snapshot.data());
+        const db = getFirestore(); //obtengo la serie de items en firestore y lo guardo en bd
+        const popular = collection(db, 'popular')
+        getDoc(popular).then((snapshot) => {
+            console.log(snapshot);
+            setBeers(popular)
         })
-
     }, [])
 
 
@@ -49,7 +36,7 @@ export const ItemListContainer = () => {
         <>
             <Location />
             {!isLoading ? (
-                <ItemList beers={product} />
+                <ItemList beers={popular} />
             ) : (
                 <div className="isLoading">
                     Loading...Many Request
