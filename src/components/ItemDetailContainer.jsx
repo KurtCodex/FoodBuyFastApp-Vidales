@@ -2,21 +2,34 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../styles/itemDetailContainer.css";
 import { ItemDetail } from "./ItemDetail";
+import { getFirestore, getDoc, doc } from 'firebase/firestore';
 
 export const ItemDetailContainer = () => {
     const { id } = useParams();
     const [isLoading, setIsLoading] = useState(true);
-    const [beers, setBeers] = useState([]);
+    const [beer, setBeer] = useState([]);
+
+    // useEffect(() => {
+    //     setIsLoading(true);
+    //     fetch("https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByPopular.json")
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             setBeers(data.find(e => e.id === parseInt(id)))
+    //             setIsLoading(false);
+    //         }); 
+    // }, [id]);
 
     useEffect(() => {
-        setIsLoading(true);
-        fetch("https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByPopular.json")
-            .then((response) => response.json())
-            .then((data) => {
-                setBeers(data.find(e => e.id === parseInt(id)))
-                setIsLoading(false);
-            });
-    }, [id]);
+        if (id) {
+            const db = getFirestore();
+            const beer = doc(db, 'popular', id);
+            console.log(id);
+            getDoc(beer).then((snapshot) => {
+                console.log(snapshot.data());
+                setBeer(snapshot.data())
+            })
+        }
+    }, [id])
 
 
 
@@ -29,19 +42,22 @@ export const ItemDetailContainer = () => {
                         <button>Volver</button>
                     </Link>
                 </div>
-                {!isLoading && beers.rating !== null ? (
+                {!isLoading && beer.rating !== null ? (
                     <div className="container-itemDetails">
                         <ItemDetail
-                            item={beers}
-                            image={beers.image}
-                            price={beers.price}
-                            name={beers.name}
-                            reviews={beers.rating.reviews}
-                            average={beers.rating.average}
+                            item={beer}
+                            image={beer.image}
+                            price={beer.price}
+                            name={beer.name}
+                            reviews={beer.rating.reviews}
+                            average={beer.rating.average}
                         />
                     </div>
                 ) : (
-                    "Loading details"
+                    <div style={{ color: "#FFF" }}>
+                        {"Loading details"}
+                    </div>
+
                 )}
             </div>
         </>

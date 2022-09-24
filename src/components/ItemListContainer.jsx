@@ -23,10 +23,8 @@ export const ItemListContainer = () => {
     useEffect(() => {
 
         const db = getFirestore();
-        const beers = collection(db, 'popular')
-        console.log(beers);
+        const beers = collection(db, 'popular');
         getDocs(beers).then((snapshot) => {
-            console.log(snapshot);
             setBeers(snapshot.docs.map((producto) => ({ id: producto.id, ...producto.data() })));
             setIsLoading(false);
         })
