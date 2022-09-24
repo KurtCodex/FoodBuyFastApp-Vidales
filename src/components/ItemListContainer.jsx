@@ -27,11 +27,12 @@ export const ItemListContainer = () => {
         getDoc(beers).then((snapshot) => {
             console.log(snapshot);
             setBeers(beers)
+            setIsLoading(false);
         })
     }, [])
 
 
-    setIsLoading(false);
+
     return (
         <>
             <Location />
