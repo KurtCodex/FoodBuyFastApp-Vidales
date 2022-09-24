@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Location } from "../components/Location";
 import "../styles/Location.css";
 import { ItemList } from "./ItemList";
-import { getFirestore, getDoc, collection } from 'firebase/firestore';
+import { getFirestore, getDocs, collection } from 'firebase/firestore';
 
 export const ItemListContainer = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -22,11 +22,12 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
 
-        const db = getFirestore(); //obtengo la serie de items en firestore y lo guardo en bd
+        const db = getFirestore();
         const beers = collection(db, 'popular')
-        getDoc(beers).then((snapshot) => {
+        console.log(beers);
+        getDocs(beers).then((snapshot) => {
             console.log(snapshot);
-            setBeers(beers)
+            setBeers(snapshot.docs.map((producto) => ({ id: producto.id, ...producto.data() })));
             setIsLoading(false);
         })
     }, [])
