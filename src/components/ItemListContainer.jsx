@@ -21,26 +21,27 @@ export const ItemListContainer = () => {
     // }, []);
 
 
-    const [id, setId] = useState('')
-    const [Product, setProduct] = useState([])
+
+    const [product, setProduct] = useState([])
+
     useEffect(() => {
-        if (id) {
-            const db = getFirestore();
-            const itemRef = doc(db, 'popular', id.trim());
-            getDoc(itemRef).then((snapshot) => {
 
-                const newProduct = {
-                    id: snapshot.id,
-                    ...snapshot.data(),
-                };
+        const db = getFirestore();
+        const itemRef = doc(db, 'popular');
+        getDoc(itemRef).then((snapshot) => {
 
-                setProduct(newProduct)
+            const newProduct = {
+                id: snapshot.id,
+                ...snapshot.data(),
+            };
 
-                console.log(snapshot.id);
-                console.log(snapshot.data());
-            })
-        }
-    }, [id])
+            setProduct(newProduct)
+
+            console.log(snapshot.id);
+            console.log(snapshot.data());
+        })
+
+    }, [])
 
 
     setIsLoading(false);
@@ -48,7 +49,7 @@ export const ItemListContainer = () => {
         <>
             <Location />
             {!isLoading ? (
-                <ItemList beers={Product} />
+                <ItemList beers={product} />
             ) : (
                 <div className="isLoading">
                     Loading...Many Request
