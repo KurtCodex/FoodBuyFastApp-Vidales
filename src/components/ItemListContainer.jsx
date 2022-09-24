@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Location } from "../components/Location";
 import "../styles/Location.css";
 import { ItemList } from "./ItemList";
-import { getFirestore, doc, getdoc } from 'firebase/firestore';
+import { getFirestore, doc, getdoc, getDoc } from 'firebase/firestore';
 
 export const ItemListContainer = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -27,7 +27,7 @@ export const ItemListContainer = () => {
         if (id) {
             const db = getFirestore();
             const itemRef = doc(db, 'popular', id.trim());
-            getdoc(itemRef).then((snapshot) => {
+            getDoc(itemRef).then((snapshot) => {
 
                 const newProduct = {
                     id: snapshot.id,
