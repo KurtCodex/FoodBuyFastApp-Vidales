@@ -23,10 +23,10 @@ export const ItemListContainer = () => {
     useEffect(() => {
 
         const db = getFirestore(); //obtengo la serie de items en firestore y lo guardo en bd
-        const popular = collection(db, 'popular')
-        getDoc(popular).then((snapshot) => {
+        const beers = collection(db, 'popular')
+        getDoc(beers).then((snapshot) => {
             console.log(snapshot);
-            setBeers(popular)
+            setBeers(beers)
         })
     }, [])
 
@@ -36,7 +36,7 @@ export const ItemListContainer = () => {
         <>
             <Location />
             {!isLoading ? (
-                <ItemList beers={popular} />
+                <ItemList beers={beers} />
             ) : (
                 <div className="isLoading">
                     Loading...Many Request
