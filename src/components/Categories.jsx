@@ -2,24 +2,35 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../styles/categories.css";
 import { Item } from "./Item";
+import { getFirestore, getDocs, collection, query, where } from 'firebase/firestore';
 
 export const Categories = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [beers, setBeers] = useState([]);
-
+  const [category, setCategory] = useState([])
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   fetch(
+  //     "https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByCategory.json"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setBeers(data[id] ?? []);
+  //       setIsLoading(false);
+  //     });
+  // }, [id]);
   useEffect(() => {
-    setIsLoading(true);
-    fetch(
-      "https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByCategory.json"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setBeers(data[id] ?? []);
-        setIsLoading(false);
-      });
-  }, [id]);
+    setCategory("ipa");
+    const db = getFirestore();
+    const beers = collection(db, 'popular');
+    const q = query(beers, where('category', '==', category))
+    getDocs(q).then((snapshot) => {
+      setBeers(snapshot.docs.map((producto) => ({ id: producto.id, ...producto.data() })));
+      setIsLoading(false);
+    })
+  }, [category])
 
   return (
     <>
@@ -43,7 +54,7 @@ export const Categories = () => {
                     title={e.name}
                     idx={e.id}
                     price={e.price}
-                    reviews={e.rating.reviews}
+                    reviews={e.reviews}
                   />
                 </Link>
               ))

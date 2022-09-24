@@ -21,7 +21,7 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         if (id) {
-            setIsLoading(true)
+            setIsLoading(true);
             const db = getFirestore();
             const beer = doc(db, 'popular', id);
             console.log(id);
