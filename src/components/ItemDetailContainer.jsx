@@ -21,12 +21,14 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         if (id) {
+            setIsLoading(true)
             const db = getFirestore();
             const beer = doc(db, 'popular', id);
             console.log(id);
             getDoc(beer).then((snapshot) => {
                 console.log(snapshot.data());
-                setBeer(snapshot.data())
+                setBeer(snapshot.data());
+                setIsLoading(false);
             })
         }
     }, [id])
@@ -49,8 +51,8 @@ export const ItemDetailContainer = () => {
                             image={beer.image}
                             price={beer.price}
                             name={beer.name}
-                            reviews={beer.rating.reviews}
-                            average={beer.rating.average}
+                            reviews={beer.reviews}
+                            average={beer.average}
                         />
                     </div>
                 ) : (
