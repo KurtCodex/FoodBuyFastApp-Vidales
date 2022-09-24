@@ -22,15 +22,15 @@ export const Categories = () => {
   //     });
   // }, [id]);
   useEffect(() => {
-    setCategory("ipa");
+
     const db = getFirestore();
     const beers = collection(db, 'popular');
-    const q = query(beers, where('category', '==', category))
+    const q = query(beers, where('category', '==', id))
     getDocs(q).then((snapshot) => {
       setBeers(snapshot.docs.map((producto) => ({ id: producto.id, ...producto.data() })));
       setIsLoading(false);
     })
-  }, [category])
+  }, [id])
 
   return (
     <>
