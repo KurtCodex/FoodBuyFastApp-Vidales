@@ -26,7 +26,7 @@ export const Cart = () => {
                         </div>
                         <div className='container-buttons-finally'>
                             <div className='container-continue-buy'>
-                                <Link to="">
+                                <Link to="/ContactForm">
                                     <button
                                         className='btn-continue-buy'>
                                         Finalizar compra
