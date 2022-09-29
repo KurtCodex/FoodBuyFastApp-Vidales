@@ -10,7 +10,21 @@
 
 }
 
+.container-buttons-finally {
+    display: flex;
+    flex-direction: row;
+}
+
 .container-clean-Cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 1em;
+    width: 70%;
+}
+
+.container-continue-buy {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -75,6 +89,22 @@
     letter-spacing: 2px;
 
     border-radius: 5px;
+}
+
+.btn-continue-buy {
+    background-color: #113609;
+    border: none;
+    color: #E0CFAE;
+    padding: 1em;
+    margin: 5px;
+    letter-spacing: 2px;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+.btn-continue-buy:hover {
+    background-color: #236d12;
+    cursor: pointer;
 }
 
 .btn-clean-cart {

@@ -22,11 +22,6 @@ export const Local = () => {
   return (
     <>
       <div className="title-container-list">
-        <div className="exit-btn">
-          <Link to="/">
-            <button>Inicio</button>
-          </Link>
-        </div>
         <div className="title-list">
           <h1> Pasá por uno de nuestros locales y probalas! </h1>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from "react-router-dom";
+import { Route, Router, Routes } from "react-router-dom";
 import { ItemListContainer } from '../components/ItemListContainer';
 import { ItemDetailContainer } from '../components/ItemDetailContainer';
 import { Categories } from '../components/Categories';
@@ -16,6 +16,8 @@ export const AppRouter = () => {
             <Route path="/Categories/:id" element={<Categories />}></Route>
             <Route path="/Categories/:id" element={<Categories />}></Route>
             <Route path="/Cart" element={<Cart />}></Route>
+            <Route path="/ContactForm" element={<ContactForm />}></Route>
+
         </Routes>
     )
 }

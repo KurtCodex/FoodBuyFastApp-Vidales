@@ -24,12 +24,22 @@ export const Cart = () => {
                                 ))
                             }
                         </div>
-                        <div className='container-clean-Cart'>
-                            <button
-                                onClick={() => clearAll()}
-                                className='btn-clean-cart'>
-                                Vaciar carrito
-                            </button>
+                        <div className='container-buttons-finally'>
+                            <div className='container-continue-buy'>
+                                <Link to="">
+                                    <button
+                                        className='btn-continue-buy'>
+                                        Finalizar compra
+                                    </button>
+                                </Link>
+                            </div>
+                            <div className='container-clean-Cart'>
+                                <button
+                                    onClick={() => clearAll()}
+                                    className='btn-clean-cart'>
+                                    Vaciar carrito
+                                </button>
+                            </div>
                         </div>
                         <div className='container-price-tot'>
                             <h1>Total de la compra es: $ {total}</h1>

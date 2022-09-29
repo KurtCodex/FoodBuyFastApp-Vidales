@@ -8,7 +8,7 @@ export const Categories = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [beers, setBeers] = useState([]);
-  const [category, setCategory] = useState([])
+
   // useEffect(() => {
   //   setIsLoading(true);
   //   fetch(
@@ -27,7 +27,10 @@ export const Categories = () => {
     const beers = collection(db, 'popular');
     const q = query(beers, where('category', '==', id))
     getDocs(q).then((snapshot) => {
-      setBeers(snapshot.docs.map((producto) => ({ id: producto.id, ...producto.data() })));
+      setBeers(snapshot.docs.map((producto) => ({
+        id: producto.id,
+        ...producto.data()
+      })));
       setIsLoading(false);
     })
   }, [id])
