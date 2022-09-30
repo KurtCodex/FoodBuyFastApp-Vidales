@@ -1,7 +1,7 @@
 .container-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     height: 100vh;
@@ -11,4 +11,27 @@
 
     background-color: rgb(40, 38, 36);
     color: wheat;
+}
+
+.btn-finalize-buy {
+    background-color: #113609;
+    border: none;
+    color: #E0CFAE;
+    padding: 1em;
+    margin: 5px;
+    letter-spacing: 2px;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+.btn-finalize-buy:hover {
+    background-color: #236d12;
+    cursor: pointer;
+}
+
+
+.label-form {
+    font-size: 25px;
+    margin: 5px;
+    margin-left: 25px;
 }

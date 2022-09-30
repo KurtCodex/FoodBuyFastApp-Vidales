@@ -3,14 +3,11 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import '../styles/contactForm.css'
 export const ContactForm = () => {
 
-
     const [form, setForm] = useState({
-
         name: '',
         phone: '',
         email: '',
-
-    })
+    });
 
     const changeHandler = (event) => {
         const newForm = { ...form, [event.target.name]: event.target.value };
@@ -20,7 +17,7 @@ export const ContactForm = () => {
     const submitHandler = (event) => {
         event.preventDefault();
 
-        const db = getFirestore
+        const db = getFirestore();
         const contactFormCollection = collection(db, 'contactForm');
         addDoc(contactFormCollection, form)
             .then((snapshot) =>
@@ -35,21 +32,18 @@ export const ContactForm = () => {
                 <h1>Termina tu compra</h1>
 
                 <form action="form-container" method="post" onSubmit={submitHandler}>
-                    <ul>
-                        <li>
-                            <label htmlFor="name">Name:</label>
-                            <input type="text" id="name" name="user_name" onChange={changeHandler} value={form.name} />
-                        </li>
-                        <li>
-                            <label htmlFor="phone">Phone:</label>
-                            <input type="phone" id="phone" name="user_phone" onChange={changeHandler} value={form.phone} />
-                        </li>
-                        <li>
-                            <label htmlFor="mail">E-mail:</label>
-                            <input type="email" id="mail" name="user_email" onChange={changeHandler} value={form.email} />
-                        </li>
-                    </ul>
-                    <button className='btn-continue-buy'> Completar </button>
+
+                    <label className='label-form' htmlFor="name">Name:</label>
+                    <input type="text" id="name" name="name" onChange={changeHandler} value={form.name} />
+
+                    <label className='label-form' htmlFor="phone">Phone:</label>
+                    <input type="phone" id="phone" name="phone" onChange={changeHandler} value={form.phone} />
+
+                    <label className='label-form' htmlFor="mail">E-mail:</label>
+                    <input type="email" id="mail" name="email" onChange={changeHandler} value={form.email} />
+                    <button className='btn-finalize-buy'> Completar </button>
+
+
                 </form>
 
 
