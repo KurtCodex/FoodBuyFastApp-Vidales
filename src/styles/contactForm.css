@@ -35,3 +35,36 @@
     margin: 5px;
     margin-left: 25px;
 }
+
+.feedback-send-data {
+    margin-top: 10em;
+    color: #E0CFAE;
+    font-size: 20px;
+}
+
+
+
+@media only screen and (max-width : 420px) {
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    input {
+        width: 200px;
+        height: 30px;
+        font-size: 25px;
+    }
+
+    .label-form {
+        font-size: 25px;
+        margin: 5px;
+    }
+
+    .btn-finalize-buy {
+        margin-top: 70px;
+    }
+}

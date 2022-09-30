@@ -25,6 +25,7 @@ export const Categories = () => {
 
     const db = getFirestore();
     const beers = collection(db, 'popular');
+
     const q = query(beers, where('category', '==', id))
     getDocs(q).then((snapshot) => {
       setBeers(snapshot.docs.map((producto) => ({
@@ -34,6 +35,7 @@ export const Categories = () => {
       setIsLoading(false);
     })
   }, [id])
+
 
   return (
     <>

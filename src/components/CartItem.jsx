@@ -10,5 +10,5 @@ export const CartItem = ({ item, quantity, removeItem, clearAll }) => {
                 <button onClick={() => removeItem(item.id)} className='btn-exit-cart'> Eliminar </button>
             </div>
         </>
-    ) // asdas
+    )
 }
