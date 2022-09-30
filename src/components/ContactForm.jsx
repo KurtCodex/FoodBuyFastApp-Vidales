@@ -23,6 +23,7 @@ export const ContactForm = () => {
             .then((snapshot) =>
                 console.log(snapshot)
             );
+        alert("Comprado!");
     }
 
     return (
