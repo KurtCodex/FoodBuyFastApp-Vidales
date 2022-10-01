@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/Cart.css'
-export const CartItem = ({ item, quantity, removeItem, clearAll }) => {
+
+export const CartItem = ({ item, quantity, removeItem }) => {
 
     return (
         <>
@@ -9,6 +10,7 @@ export const CartItem = ({ item, quantity, removeItem, clearAll }) => {
                 <div className='container-quantity'></div>
                 <button onClick={() => removeItem(item.id)} className='btn-exit-cart'> Eliminar </button>
             </div>
+
         </>
     )
 }

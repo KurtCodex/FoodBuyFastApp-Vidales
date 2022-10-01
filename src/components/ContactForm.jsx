@@ -3,17 +3,16 @@ import { Navigate } from "react-router-dom";
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { CContext } from "../context/CartContext";
 import { useContext } from 'react';
-
 import '../styles/contactForm.css'
-import { Link } from 'react-router-dom';
 
 
 
-export const ContactForm = () => {
-    const { clearAll } = useContext(CContext);
+export const ContactForm = ({ item }) => {
+    const { itemsCart, clearAll } = useContext(CContext);
+    let items = itemsCart.map((e) => (e.item))
+
 
     const [id, setId] = useState();
-
     const [form, setForm] = useState({
         name: '',
         phone: '',
@@ -23,20 +22,24 @@ export const ContactForm = () => {
     const changeHandler = (event) => {
         const newForm = { ...form, [event.target.name]: event.target.value };
         setForm(newForm);
+
+    }
+
+    let compra = {
+        items: items,
+        form: form,
     }
 
     const submitHandler = (event) => {
         event.preventDefault();
 
         const db = getFirestore();
-        const contactFormCollection = collection(db, 'contactForm');
-        addDoc(contactFormCollection, form)
+        const OrdenCompraCollection = collection(db, 'OrdenCompra');
+        addDoc(OrdenCompraCollection, compra)
             .then((snapshot) =>
                 setId(snapshot.id)
             );
-
         clearAll();
-
     }
 
 
@@ -47,13 +50,13 @@ export const ContactForm = () => {
                     {alert(`Datos enviados correctamente. Su id es: ${id}`)}
                     <Navigate to="/"></Navigate>
                 </>
-
             ) : (
 
                 < div className='container-form'>
 
                     <h1>Termina tu compra</h1>
 
+                    {console.log(items)}
                     <form action="form-container" method="post" onSubmit={submitHandler}>
 
                         <label className='label-form' htmlFor="name">Name:</label>
