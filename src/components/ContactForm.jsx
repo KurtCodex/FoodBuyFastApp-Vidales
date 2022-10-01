@@ -8,10 +8,10 @@ import '../styles/contactForm.css'
 
 
 export const ContactForm = ({ item }) => {
-    const { itemsCart, clearAll } = useContext(CContext);
+    const { itemsCart, clearAll, Total } = useContext(CContext);
     let items = itemsCart.map((e) => (e.item))
-
-
+    let day = new Date();
+    let total = Total();
     const [id, setId] = useState();
     const [form, setForm] = useState({
         name: '',
@@ -28,6 +28,8 @@ export const ContactForm = ({ item }) => {
     let compra = {
         items: items,
         form: form,
+        total: total,
+        fecha: day,
     }
 
     const submitHandler = (event) => {
@@ -55,8 +57,8 @@ export const ContactForm = ({ item }) => {
                 < div className='container-form'>
 
                     <h1>Termina tu compra</h1>
-
-                    {console.log(items)}
+                    {console.log(day)}
+                    {console.log(total)}
                     <form action="form-container" method="post" onSubmit={submitHandler}>
 
                         <label className='label-form' htmlFor="name">Name:</label>
