@@ -37,6 +37,8 @@
 }
 
 .feedback-send-data {
+    display: flex;
+    justify-content: center;
     margin-top: 10em;
     color: #E0CFAE;
     font-size: 20px;
@@ -66,5 +68,11 @@
 
     .btn-finalize-buy {
         margin-top: 70px;
+    }
+
+    .feedback-send-data {
+        margin-top: 10em;
+        color: #E0CFAE;
+        font-size: 20px;
     }
 }

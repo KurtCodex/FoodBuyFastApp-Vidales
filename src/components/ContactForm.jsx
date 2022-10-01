@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Navigate } from "react-router-dom";
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { CContext } from "../context/CartContext";
 import { useContext } from 'react';
@@ -33,18 +34,20 @@ export const ContactForm = () => {
             .then((snapshot) =>
                 setId(snapshot.id)
             );
-        alert("Comprado!");
+
+        clearAll();
+
     }
 
-    const goInit = () => {
-        clearAll();
-        <Link to='/'> </Link>
-    }
 
     return (
         <>
             {typeof id !== 'undefined' ? (
-                <p className='feedback-send-data'>Datos enviados exitosamente! <br /> El id es:  {id} </p>
+                <>
+                    {alert(`Datos enviados correctamente. Su id es: ${id}`)}
+                    <Navigate to="/"></Navigate>
+                </>
+
             ) : (
 
                 < div className='container-form'>
@@ -61,15 +64,11 @@ export const ContactForm = () => {
 
                         <label className='label-form' htmlFor="mail">E-mail:</label>
                         <input type="email" id="mail" name="email" onChange={changeHandler} value={form.email} />
-                        <button onClick={() => goInit()} className='btn-finalize-buy'> Completar </button>
-
-
+                        <button className='btn-finalize-buy'> Completar </button>
                     </form>
-
-
-
                 </div>
-            )}
+            )
+            }
         </>
     )
 }
