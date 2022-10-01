@@ -9,9 +9,6 @@ import '../styles/contactForm.css'
 
 export const ContactForm = ({ item }) => {
     const { itemsCart, clearAll, Total } = useContext(CContext);
-    let items = itemsCart.map((e) => (e.item))
-    let day = new Date();
-    let total = Total();
     const [id, setId] = useState();
     const [form, setForm] = useState({
         name: '',
@@ -19,10 +16,13 @@ export const ContactForm = ({ item }) => {
         email: '',
     });
 
+    let items = itemsCart.map((e) => (e.item))
+    let day = new Date();
+    let total = Total();
+
     const changeHandler = (event) => {
         const newForm = { ...form, [event.target.name]: event.target.value };
         setForm(newForm);
-
     }
 
     let compra = {
@@ -34,7 +34,6 @@ export const ContactForm = ({ item }) => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-
         const db = getFirestore();
         const OrdenCompraCollection = collection(db, 'OrdenCompra');
         addDoc(OrdenCompraCollection, compra)
@@ -49,7 +48,7 @@ export const ContactForm = ({ item }) => {
         <>
             {typeof id !== 'undefined' ? (
                 <>
-                    {alert(`Datos enviados correctamente. Su id es: ${id}`)}
+                    {alert(`Compra exitosa! Su id es: ${id}`)}
                     <Navigate to="/"></Navigate>
                 </>
             ) : (
@@ -57,8 +56,6 @@ export const ContactForm = ({ item }) => {
                 < div className='container-form'>
 
                     <h1>Termina tu compra</h1>
-                    {console.log(day)}
-                    {console.log(total)}
                     <form action="form-container" method="post" onSubmit={submitHandler}>
 
                         <label className='label-form' htmlFor="name">Name:</label>
