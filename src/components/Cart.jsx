@@ -1,9 +1,11 @@
 import React from 'react'
-import "../styles/Cart.css"
 import { CContext } from "../context/CartContext";
 import { useContext } from 'react';
 import { CartItem } from './CartItem';
 import { Link } from 'react-router-dom';
+
+import "../styles/Cart.css"
+
 export const Cart = () => {
     const { itemsCart, removeItem, clearAll, Total } = useContext(CContext);
     const total = Total();

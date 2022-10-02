@@ -1,27 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Location } from "../components/Location";
-import "../styles/Location.css";
 import { ItemList } from "./ItemList";
 import { getFirestore, getDocs, collection } from 'firebase/firestore';
+
+import "../styles/Location.css";
 
 export const ItemListContainer = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [beers, setBeers] = useState([]);
 
-    // useEffect(() => {
-    //     setIsLoading(true);
-    //     fetch(
-    //         "https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByPopular.json"
-    //     )
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             setBeers(data);
-    //             setIsLoading(false);
-    //         });
-    // }, []);
-
     useEffect(() => {
-
         const db = getFirestore();
         const beers = collection(db, 'popular');
         getDocs(beers).then((snapshot) => {
@@ -29,8 +17,6 @@ export const ItemListContainer = () => {
             setIsLoading(false);
         })
     }, [])
-
-
 
     return (
         <>

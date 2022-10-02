@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Navigate } from "react-router-dom";
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { CContext } from "../context/CartContext";
-import { useContext } from 'react';
+
 import '../styles/contactForm.css'
-
-
 
 export const ContactForm = ({ item }) => {
     const { itemsCart, clearAll, Total } = useContext(CContext);

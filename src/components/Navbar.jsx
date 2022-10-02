@@ -5,6 +5,7 @@ import { CartWidget } from './CartWidget';
 import { Link } from 'react-router-dom';
 
 import logobeer from '../assets/imgLogo/logo-beer.png';
+
 import '../styles/Navbar.css'
 
 

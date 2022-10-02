@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "../styles/local.css";
 import { ItemLocal } from "./ItemLocal";
+
+import "../styles/local.css";
 
 export const Local = () => {
   const [isLoading, setIsLoading] = useState(false);

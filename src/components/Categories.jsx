@@ -9,18 +9,6 @@ export const Categories = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [beers, setBeers] = useState([]);
 
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   fetch(
-  //     "https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByCategory.json"
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setBeers(data[id] ?? []);
-  //       setIsLoading(false);
-  //     });
-  // }, [id]);
   useEffect(() => {
 
     const db = getFirestore();
@@ -65,9 +53,7 @@ export const Categories = () => {
               ))
             ) : (
               <div className="isLoading">
-                Loading...Many Request
-                <br />
-                Wait five minutes please.
+                Loading...
               </div>
             )}
           </div>
