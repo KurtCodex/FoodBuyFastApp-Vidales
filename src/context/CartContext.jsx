@@ -1,5 +1,4 @@
-import React from 'react'
-import { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 export const CContext = createContext();
 
 export const CartContext = ({ children }) => {
@@ -13,12 +12,13 @@ export const CartContext = ({ children }) => {
                 (e) => e.item.id === item.id), 1)
             )
         }
-
         setItemCart([...itemsCart, { item, quantity }])
     }
+
     const isInCart = (item) => {
         return itemsCart.find((e) => e.item.id === item.id);
     }
+
     const removeItem = (itemId) => {
         setItemCart(itemsCart.filter(e => e.item.id !== itemId))
     }
@@ -28,7 +28,6 @@ export const CartContext = ({ children }) => {
     }
 
     const Total = () => {
-
         return itemsCart.reduce((valorAnt, valorAct) => valorAnt + (parseFloat((valorAct.item.price * valorAct.quantity)).toFixed(2) * 1), 0);
     }
 

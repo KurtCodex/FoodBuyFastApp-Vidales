@@ -1,11 +1,6 @@
 import React from 'react'
 import { Route, Routes } from "react-router-dom";
-import { ItemListContainer } from '../components/ItemListContainer';
-import { ItemDetailContainer } from '../components/ItemDetailContainer';
-import { Categories } from '../components/Categories';
-import { Cart } from '../components/Cart';
-import { Local } from '../components/Local';
-import { ContactForm } from '../components/ContactForm';
+import { ItemListContainer, ItemDetailContainer, Categories, Local, Cart, ContactForm } from './index'
 
 export const AppRouter = () => {
     return (
