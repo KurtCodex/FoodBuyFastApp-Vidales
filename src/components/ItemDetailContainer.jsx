@@ -31,16 +31,19 @@ export const ItemDetailContainer = () => {
                     </Link>
                 </div>
                 {!isLoading && beer.rating !== null ? (
-                    <div className="container-itemDetails">
-                        <ItemDetail
-                            item={beer}
-                            image={beer.image}
-                            price={beer.price}
-                            name={beer.name}
-                            reviews={beer.reviews}
-                            average={beer.average}
-                        />
-                    </div>
+                    <>
+                        <div className="container-itemDetails">
+                            <ItemDetail
+                                item={beer}
+                                image={beer.image}
+                                price={beer.price}
+                                name={beer.name}
+                                reviews={beer.reviews}
+                                average={beer.average}
+                            />
+                        </div>
+                        {console.log(beer)}
+                    </>
                 ) : (
                     <div style={{ color: "#FFF" }}>
                         {"Loading details"}

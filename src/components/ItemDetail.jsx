@@ -9,6 +9,7 @@ export const ItemDetail = ({ image, name, price, reviews, average, item }) => {
 
     const onAdd = () => {
         addItem(item, cantCart)
+        console.log("item: ", item, "cantidad: ", cantCart)
     }
 
     return (
