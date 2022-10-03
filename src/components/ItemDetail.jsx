@@ -9,7 +9,6 @@ export const ItemDetail = ({ image, name, price, reviews, average, item }) => {
 
     const onAdd = () => {
         addItem(item, cantCart)
-        console.log("item: ", item, "cantidad: ", cantCart)
     }
 
     return (
@@ -18,7 +17,7 @@ export const ItemDetail = ({ image, name, price, reviews, average, item }) => {
             <h1> {name} </h1>
             <h2> Precio por unidad: {price} </h2>
             <h2> Reseñas positivas: {reviews} </h2>
-            <h2> Promedio de compra: {average.toFixed(2) * 10}% </h2>
+            <h2> Promedio de compra: {average}% </h2>
             <br />
 
             <ItemCount stock={6} initial={1} setCantCart={setCantCart} cantCart={cantCart} />

@@ -9,18 +9,18 @@ export const CartContext = ({ children }) => {
         if (newItem) {
             quantity = quantity + newItem.quantity;
             setItemCart(itemsCart.splice(itemsCart.findIndex(
-                (e) => e.item.id === item.id), 1)
+                (e) => e.item === item), 1)
             )
         }
         setItemCart([...itemsCart, { item, quantity }])
     }
 
     const isInCart = (item) => {
-        return itemsCart.find((e) => e.item.id === item.id);
+        return itemsCart.find((e) => e.item === item);
     }
 
-    const removeItem = (itemId) => {
-        setItemCart(itemsCart.filter(e => e.item.id !== itemId))
+    const removeItem = (item) => {
+        setItemCart(itemsCart.filter(e => e.item !== item))
     }
 
     const clearAll = () => {

@@ -42,7 +42,6 @@ export const ItemDetailContainer = () => {
                                 average={beer.average}
                             />
                         </div>
-                        {console.log(beer)}
                     </>
                 ) : (
                     <div style={{ color: "#FFF" }}>
