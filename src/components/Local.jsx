@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ItemLocal } from "./ItemLocal";
+import { getFirestore, getDocs, collection } from 'firebase/firestore';
 
 import "../styles/local.css";
 
@@ -9,14 +10,12 @@ export const Local = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(
-      "https://raw.githubusercontent.com/KazmerMaximiliano/json-api/main/beerByLocal.json"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setBeers(data);
-        setIsLoading(false);
-      });
+    const db = getFirestore();
+    const beers = collection(db, 'Local');
+    getDocs(beers).then((snapshot) => {
+      setBeers(snapshot.docs.map((producto) => ({ id: producto.id, ...producto.data() })));
+      setIsLoading(false);
+    })
   }, []);
 
   return (
@@ -33,7 +32,7 @@ export const Local = () => {
             beers.map((e, idx) => (
               <ItemLocal
                 key={idx}
-                img={e.img}
+                img={e.image}
                 name={e.name}
                 price={e.price}
                 ibu={e.ibu}
