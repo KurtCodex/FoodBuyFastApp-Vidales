@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ItemLocal } from "./ItemLocal";
-import { getFirestore, getDocs, collection } from 'firebase/firestore';
+import { ItemLocal, getFirestore, getDocs, collection } from "./index";
 
 import "../styles/local.css";
 

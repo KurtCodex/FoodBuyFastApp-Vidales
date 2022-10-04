@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Item } from "./Item";
+import { Item, Link } from "./index";
 
 import "../styles/Cards.css";
 

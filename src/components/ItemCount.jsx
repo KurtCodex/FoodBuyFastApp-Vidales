@@ -1,12 +1,9 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react'
+
 import '../styles/Cards.css'
-
-
 
 export const ItemCount = ({ stock, initial, cantCart, setCantCart }) => {
     const [counter, setCounter] = useState(initial);
-
 
     const increment = () => {
         if (cantCart < stock) {

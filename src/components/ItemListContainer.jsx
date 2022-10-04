@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Location } from "../components/Location";
-import { ItemList } from "./ItemList";
-import { getFirestore, getDocs, collection } from 'firebase/firestore';
+import { Location, ItemList, getFirestore, getDocs, collection } from "./index";
 
 import "../styles/Location.css";
 

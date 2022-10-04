@@ -1,7 +1,7 @@
-import { useState, useContext } from 'react';
-import '../styles/Cards.css'
-import { ItemCount } from "./ItemCount";
-import { CContext } from "../context/CartContext";
+import React, { useState, useContext } from 'react';
+import { ItemCount, CContext } from "./index";
+
+import '../styles/Cards.css';
 
 export const ItemDetail = ({ image, name, price, reviews, average, item }) => {
     const [cantCart, setCantCart] = useState(1)

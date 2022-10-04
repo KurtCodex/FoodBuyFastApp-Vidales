@@ -1,4 +1,5 @@
 import React from 'react'
+
 import '../styles/local.css'
 
 export const ItemLocal = ({ name, img, price, ibu }) => {

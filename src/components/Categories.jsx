@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Item, getFirestore, getDocs, collection, query, where } from "./index";
+
 import "../styles/categories.css";
-import { Item } from "./Item";
-import { getFirestore, getDocs, collection, query, where } from 'firebase/firestore';
 
 export const Categories = () => {
   const { id } = useParams();
@@ -10,7 +9,6 @@ export const Categories = () => {
   const [beers, setBeers] = useState([]);
 
   useEffect(() => {
-
     const db = getFirestore();
     const beers = collection(db, 'popular');
 

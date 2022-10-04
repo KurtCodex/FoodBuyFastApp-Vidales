@@ -1,8 +1,5 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { CContext } from "../context/CartContext";
-import { useContext } from 'react';
+import React, { useContext } from 'react'
+import { CContext, FontAwesomeIcon, faCartShopping } from "./index";
 
 
 
@@ -17,12 +14,8 @@ export const CartWidget = () => {
                     <div className='container-circle-num-cant'>
                         <p className='circle-num-cant'>{num}</p>
                     </div>
-
-
                 </div>) : (<></>)
-
             }
-
         </>
     )
 }

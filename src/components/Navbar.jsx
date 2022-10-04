@@ -1,14 +1,8 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { CartWidget } from './CartWidget';
-import { Link } from 'react-router-dom';
-
+import { CartWidget, Link, FontAwesomeIcon, faMagnifyingGlass } from './index';
 import logobeer from '../assets/imgLogo/logo-beer.png';
 
 import '../styles/Navbar.css'
-
-
 
 export const Navbar = () => {
     return (

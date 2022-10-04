@@ -16,7 +16,7 @@ export const CartContext = ({ children }) => {
     }
 
     const isInCart = (item) => {
-        return itemsCart.find((e) => e.item === item);
+        return itemsCart.find((e) => e.item.name === item.name);
     }
 
     const removeItem = (item) => {

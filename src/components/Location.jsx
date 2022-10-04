@@ -1,9 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon, faLocationDot } from './index';
 
 import '../styles/Location.css';
-
-
 
 export const Location = () => {
     return (

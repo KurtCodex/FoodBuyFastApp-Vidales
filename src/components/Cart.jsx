@@ -1,9 +1,5 @@
-import React from 'react'
-import { CContext } from "../context/CartContext";
-import { useContext } from 'react';
-import { CartItem } from './CartItem';
-import { Link } from 'react-router-dom';
-
+import React, { useContext } from 'react'
+import { Link, CContext, CartItem } from './index';
 import "../styles/Cart.css"
 
 export const Cart = () => {
@@ -19,6 +15,7 @@ export const Cart = () => {
                             {
                                 itemsCart.map((e) => (
                                     <CartItem
+                                        key={e.item.name}
                                         item={e.item}
                                         quantity={e.quantity}
                                         removeItem={removeItem}

@@ -1,7 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Navigate } from "react-router-dom";
-import { addDoc, collection, getFirestore } from 'firebase/firestore'
-import { CContext } from "../context/CartContext";
+import { CContext, Navigate, addDoc, collection, getFirestore } from "./index";
 
 import '../styles/contactForm.css'
 
@@ -46,7 +44,7 @@ export const ContactForm = ({ item }) => {
         <>
             {typeof id !== 'undefined' ? (
                 <>
-                    {alert(`Compra exitosa! Su id es: ${id}`)}
+                    {alert(`Compra exitosa! El numero de comprobante es: ${id}`)}
                     <Navigate to="/"></Navigate>
                 </>
             ) : (
