@@ -38,27 +38,27 @@
 }
 
 .navbar-btns button {
-    background-color: #000000;
+    background-color: #333333;
     color: #E0CFAE;
-    border: 1px solid #E0CFAE;
+    /* border: 1px solid #E0CFAE; */
 
     letter-spacing: 1.5px;
     font-size: 14px;
     border-radius: 3px;
     cursor: pointer;
 
-    margin: 10px;
+    margin: 5px;
     width: 10em;
-    height: 3em;
+    height: 4em;
 }
 
 .navbar-btns button:hover {
-    background-color: #343434;
+    background-color: #414141;
 }
 
 .input-search {
     outline: none;
-    border: 2px solid #E0CFAE;
+    border: 2px solid #333333;
     letter-spacing: 1.5px;
     font-size: 14px;
 
@@ -66,7 +66,7 @@
 
     margin: 10px;
     width: 15em;
-    height: 3em;
+    height: 3.5em;
 
     border-radius: 3px;
 }
@@ -76,14 +76,14 @@
     align-items: center;
     justify-content: center;
 
-    color: #000;
-    background-color: #E0CFAE;
+    color: #E0CFAE;
+    background-color: #333333;
     border-radius: 3px;
 
     margin-right: 20px;
-    margin-left: -15px;
+    margin-left: -12px;
     width: 3em;
-    height: 3em;
+    height: 3.3em;
 
     cursor: pointer;
 }

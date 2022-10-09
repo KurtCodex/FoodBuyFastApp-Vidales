@@ -13,10 +13,14 @@ export const Navbar = () => {
                 </div>
             </Link>
             <div className="navbar-btns">
+
                 <input className='input-search' type="text" name="" id="input-search" placeholder='Que "pinta" hoy ?' />
-                <div className='navbar-btn-search'>
-                    <FontAwesomeIcon className='btn-search' icon={faMagnifyingGlass} />
-                </div>
+                <Link to="/Categories/ipa">
+                    <div className='navbar-btn-search'>
+                        <FontAwesomeIcon className='btn-search' icon={faMagnifyingGlass} />
+                    </div>
+                </Link>
+
                 <Link to="/Categories/ipa">
                     <button className="navbar-btn" icon="">Cervezas IPA</button>
                 </Link>
