@@ -5,7 +5,7 @@ import "../styles/Cart.css"
 export const Cart = () => {
     const { itemsCart, removeItem, clearAll, Total } = useContext(CContext);
     const total = Total();
-
+    total.toFixed(2);
     return (
         <>
             {
