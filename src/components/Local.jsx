@@ -45,10 +45,9 @@ export const Local = () => {
             </div>
           )}
         </div>
-
-        <div className="container-contacts">
-          <h4>Para reservas, hablanos por Whatsapp! +54 123123214</h4>
-        </div>
+      </div>
+      <div className="container-contacts">
+        <h4>Para reservas, hablanos por Whatsapp! +54 123123214</h4>
       </div>
     </>
   );
